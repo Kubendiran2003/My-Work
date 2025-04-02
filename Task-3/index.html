@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Expense Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Income Expense Calculator</h1>
+        
+        <div class="summary">
+            <div>Total Income: <span id="total-income">0</span></div>
+            <div>Total Expense: <span id="total-expense">0</span></div>
+            <div>Net Balance: <span id="net-balance">0</span></div>
+        </div>
+
+        <div class="form">
+            <input type="text" id="description" placeholder="Description">
+            <input type="number" id="amount" placeholder="Amount">
+            <div class="radio-group">
+                <label><input type="radio" name="type" value="income" checked> Income</label>
+                <label><input type="radio" name="type" value="expense"> Expense</label>
+            </div>
+            <button onclick="addEntry()">Add Entry</button>
+            <button onclick="resetForm()">Reset</button>
+        </div>
+
+        <div class="filter">
+            <label><input type="radio" name="filter" value="all" checked onclick="filterEntries('all')"> All</label>
+            <label><input type="radio" name="filter" value="income" onclick="filterEntries('income')"> Income</label>
+            <label><input type="radio" name="filter" value="expense" onclick="filterEntries('expense')"> Expense</label>
+        </div>
+
+        <ul id="entries"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

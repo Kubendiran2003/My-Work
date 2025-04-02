@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: radial-gradient(blue, rgb(34, 31, 33));
+    margin: 0;
+}
+
+.todo-container {
+    background: rgb(161, 215, 225);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    text-align: center;
+}
+
+input {
+    width: 80%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+button:hover {
+    box-shadow: 0px 0px 10px blue;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: #eee;
+    border-radius: 5px;
+    margin: 5px 0;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    transition: transform 0.3s;
+}
+li:hover {
+    transform: scale(1.05);
+}
+
+button.remove {
+    background-color: red;
+    border-radius: 5px;
+    transition: box-shadow 0.3s;
+}
+button.remove:hover {
+    box-shadow: 0px 0px 10px red;
+}
+
+
+@media screen and (max-width: 640px) {
+    .todo-container {
+        width: 250px;
+    }
+}

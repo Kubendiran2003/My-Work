@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Righteous&family=Rowdies:wght@300;400;700&family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="bg-white h-[75px]">
+    <div class="container flex items-center justify-between px-7">
+      <img class="Askmeidentity2 mix-blend-darken lg:h-[100px] md:h-[80px]" src="Asserts/Askmeidentity 2.png" />
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden flex flex-col space-y-1" id="menu-toggle">
+        <span class="w-6 h-0.5 bg-black"></span>
+        <span class="w-6 h-0.5 bg-black"></span>
+        <span class="w-6 h-0.5 bg-black"></span>
+      </button>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden  md:flex items-center lg:gap-[140px] md:gap-[10px]">
+        <nav class="flex items-center lg:space-x-10 md:space-x-2 mb-[17px]">
+          <a href="#" class="Home text-black lg:text-xl md:text-sm font-normal font-['Righteous']">Home</a>
+          <a href="#" class="text-black lg:text-xl md:text-sm font-normal font-['Righteous']">About</a>
+          <a href="#" class="text-black lg:text-xl md:text-sm font-normal font-['Righteous']">Courses</a>
+          <a href="#" class="text-black lg:text-xl md:text-sm font-normal font-['Righteous']">Contact</a>
+        </nav>
+        <img class="lg:w-[100px] mb-[17px] md:w-[70px]" src="Asserts/Group 1.png">
+        <div class="flex items-center lg:space-x-8 md:space-x-2 mb-[17px]">
+          <button
+            class="Login text-neutral-600 text-xl font-medium font-['Saira'] underline leading-[35px] font-['Righteous']">Login</button>
+          <button
+            class="bg-gradient-to-r from-blue-900 to-violet-500 w-[100px] h-[40px] rounded-lg text-white font-['Righteous']">Signup</button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <div
+        class="hidden md:hidden absolute top-[75px] left-0 w-full bg-white shadow-lg flex flex-col items-center space-y-6 py-6 transition-all duration-300"
+        id="mobile-menu">
+        <nav class="flex flex-col items-center space-y-4">
+          <a href="#" class="text-black text-xl font-normal font-['Righteous'] menu-item">Home</a>
+          <a href="#" class="text-black text-xl font-normal font-['Righteous'] menu-item">About</a>
+          <a href="#" class="text-black text-xl font-normal font-['Righteous'] menu-item">Courses</a>
+          <a href="#" class="text-black text-xl font-normal font-['Righteous'] menu-item">Contact</a>
+        </nav>
+        <img class="w-[100px]" src="Asserts/Group 1.png">
+        <div class="flex flex-col items-center space-y-4">
+          <button
+            class="Login text-neutral-600 text-xl font-medium font-['Saira'] underline leading-[35px] font-['Righteous'] menu-item">Login</button>
+          <button
+            class="bg-gradient-to-r from-blue-900 to-violet-500 w-[100px] h-[40px] rounded-lg text-white font-['Righteous'] menu-item">Signup</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Script for Mobile Toggle -->
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuItems = document.querySelectorAll(".menu-item");
+
+    menuToggle.addEventListener("click", function () {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    menuItems.forEach(item => {
+      item.addEventListener("click", function () {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+  </script>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-l from-violet-950 to-violet-800 text-white ">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+      <!-- Left Content -->
+      <div class="max-w-2xl px-4 py-10 md:px-[100px] w-full md:max-w-1/2">
+        <p
+          class="w-full md:w-[460px] text-white/80 text-[11px] md:text-[13px] font-normal font-['Righteous'] uppercase leading-tight tracking-[3px]">
+          Successful coaches are visionaries
+        </p>
+        <br>
+        <h1 class="w-full md:w-[670px]">
+          <span
+            class="text-white text-[40px] md:text-[65px] font-normal font-['Righteous'] leading-[50px] md:leading-[90px]">Good
+          </span>
+          <span
+            class="text-blue-700 text-[40px] md:text-[65px] font-normal font-['Righteous'] leading-[50px] md:leading-[90px]">coaching
+          </span>
+          <span
+            class="text-white text-[40px] md:text-[65px] font-normal font-['Righteous'] leading-[50px] md:leading-[90px]">is
+            <br>good teaching & nothing else.</span>
+        </h1>
+        <br><br><br>
+        <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
+          <button class="border-2 font-['Righteous'] px-6 py-2 md:px-[28px] md:py-3 rounded-lg">View Courses</button>
+          <p
+            class="text-white text-[14px] md:text-[16px] font-normal font-['Righteous'] leading-[32px] md:leading-[52px] text-center md:text-left">
+            Get Free Consultation
+          </p>
+        </div>
+        <br><br>
+        <div class="Form w-full md:w-[370px] h-[60px] relative bg-white rounded-[7px]">
+          <div
+            class="w-full md:w-[258px] h-[18px] left-[10px] md:left-[23px] top-[18px] absolute text-slate-600 text-[12px] md:text-[14px] font-normal font-['Righteous']">
+            What do you want to learn today?
+          </div>
+          <div
+            class="Button w-[80px] md:w-[100px] h-[40px] left-[calc(100%-90px)] md:left-[260px] top-[10px] absolute bg-gradient-to-r from-indigo-800 to-violet-500 rounded-[10px]">
+            <div class="Icon left-[10px] md:left-[18px] top-[12px] absolute">
+              <!-- Search Icon SVG -->
+            </div>
+            <div
+              class="Search w-[50px] md:w-[50.23px] h-[18px] left-[20px] md:left-[35px] top-[7px] absolute text-center text-white text-[12px] md:text-[13px] font-normal font-['Righteous'] leading-7">
+              Search
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Content -->
+      <div
+        class="hidden sm:hidden md:hidden lg:block absolute w-[530px] h-[600px] bg-white rounded-full ml-[970px] mt-[180px] blur-[70px]">
+      </div>
+      <div class="hidden sm:hidden md:hidden lg:block lg:flex gap-4 mb-[280px] absolute ml-[760px] max-w-[50%]">
+        <img src="Asserts/hero half.png" alt="">
+        <p class="w-[272px] hidden sm:hidden md:hidden lg:block">
+          <span class="Heading3RonaldRichards text-white text-[17px] font-['Rowdies'] leading-tight">Shyam</span><br>
+          <span class="text-[13px] font-['Righteous'] mb-6">In a coaching role, you ask the<br>questions and rely more
+            on your <br />staff, who become the experts, to<br>provide the information.</span><br>
+          <span class="text-sky-500 text-xs font-bold">4.9</span>
+        </p>
+      </div>
+      <div class="hidden sm:hidden md:hidden lg:block">
+        <img src="Asserts/brunette-woman.png" alt="Hero Image"
+          class="w-[458px] h-[822px] mr-[100px] opacity-0 mix-blend-darken">
+      </div>
+    </div>
+
+    <!-- Decorative Circles -->
+    <div
+      class="hidden md:block absolute w-[250px] h-[270px] opacity-30 rounded-tl-[500px] rounded-tr-[500px] border-2 border-white ml-[570px] mt-[-270px] hidden sm:hidden md:hidden lg:block">
+    </div>
+    <div
+      class="hidden md:block absolute w-[225px] h-[245px] opacity-30 rounded-tl-[500px] rounded-tr-[500px] border-4 border-dotted border-white ml-[584px] mt-[-245px] hidden sm:hidden md:hidden lg:block">
+    </div>
+    <div
+      class="hidden md:block absolute w-[200px] h-[220px] opacity-30 rounded-tl-[500px] rounded-tr-[500px] border-2 border-white ml-[597px] mt-[-220px] hidden sm:hidden md:hidden lg:block">
+    </div>
+    <div
+      class="hidden md:block absolute w-[254px] h-[254px] bg-green-300/30 rounded-full ml-[-165px] mt-[-470px] blur-[120px] hidden sm:hidden md:hidden lg:block">
+    </div>
+    <img src="Asserts/Women.png" alt=""
+      class="hidden md:block absolute ml-[940px] mt-[-830px] w-[500px] hidden sm:hidden md:hidden lg:block">
+  </section>
+
+  <!-- Trusted By Section -->
+  <section class="py-8 bg-gradient-to-b from-indigo-700 to-purple-700">
+    <div class="container mx-auto flex flex-wrap justify-center items-center py-[16px] gap-x-[60px] gap-y-4">
+      <img src="Asserts/Brand1.png" alt="Brand 1" class="h-8 sm:h-10 md:h-12 max-w-xs sm:max-w-sm md:max-w-md">
+      <img src="Asserts/Brand2.png" alt="Brand 2" class="h-8 sm:h-10 md:h-12 max-w-xs sm:max-w-sm md:max-w-md">
+      <img src="Asserts/Brand3.png" alt="Brand 3" class="h-8 sm:h-10 md:h-12 max-w-xs sm:max-w-sm md:max-w-md">
+      <img src="Asserts/Brand4.png" alt="Brand 4" class="h-8 sm:h-10 md:h-12 max-w-xs sm:max-w-sm md:max-w-md">
+      <img src="Asserts/Brand5.png" alt="Brand 5" class="h-8 sm:h-10 md:h-12 max-w-xs sm:max-w-sm md:max-w-md">
+      <img src="Asserts/Brand6.png" alt="Brand 6" class="h-8 sm:h-10 md:h-12 max-w-xs sm:max-w-sm md:max-w-md">
+    </div>
+  </section>
+
+  <!-- Featured Courses -->
+  <section class="py-16 bg-gradient-to-b from-indigo-50 to-blue-100">
+    <div class="container mx-auto text-center">
+      <div
+        class="Ellipse118 absolute ml-[200px] mt-[100px] w-[90px] h-[90px] origin-top-left rotate-[-150deg] rounded-full border-[15px] border-cyan-400/20">
+      </div>
+
+      <h2 class="MoreCoursesFromCatagories">
+        <span class="text-zinc-800 text-[45px] font-normal font-['Rowdies'] font-extrabold leading-[70px]">Featured
+        </span>
+        <span class="text-blue-500 text-[45px] font-normal font-['Rowdies'] leading-[70px]">Course</span>
+      </h2>
+
+      <p class="text-black/ font-normal font-['Righteous'] uppercase leading-tight tracking-[3px]">
+        The feature courses are we invented our teaching part
+      </p>
+
+      <br><br>
+
+      <!-- Responsive Grid Layout -->
+      <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:px-4 sm:px-10 md:px-[10px]">
+        <!-- Course 1 -->
+        <div class="bg-white shadow rounded-lg">
+          <img src="Asserts/Mask group (0).png" alt="Course" class="mb-4 rounded">
+          <div class="flex justify-center gap-[180px]">
+            <div class="text-slate-600 text-sm font-medium font-['Saira'] leading-[35px]">1,957 Students</div>
+            <div class="text-slate-600 text-sm font-medium font-['Saira'] leading-[35px]">01h 59m</div>
+          </div>
+          <h3 class="text-slate-700 text-left px-10 py-4 text-xl font-semibold font-['Saira']">
+            Motion Graphics: Create a Nice Typography Animation
+          </h3>
+          <div class="flex justify-center gap-[250px]">
+            <div class="text-slate-600 text-[18px] mb-4 font-semibold font-['Saira'] leading-[35px]">Rs.499</div>
+            <img src="Asserts/store.png" class="mb-8 h-[20px] w-[20px]">
+          </div>
+        </div>
+
+        <!-- Course 2 -->
+        <div class="bg-white shadow rounded-lg">
+          <img src="Asserts/Mask group (1).png" alt="Course" class="mb-4 rounded">
+          <div class="flex justify-center gap-[180px]">
+            <div class="text-slate-600 text-sm font-medium font-['Saira'] leading-[35px]">9,575 Students</div>
+            <div class="text-slate-600 text-sm font-medium font-['Saira'] leading-[35px]">01h 59m</div>
+          </div>
+          <h3 class="text-slate-700 text-left px-10 py-4 text-xl font-semibold font-['Saira']">
+            Advance PHP knowledge with JS to make smart web
+          </h3>
+          <div class="flex justify-center gap-[250px]">
+            <div class="text-slate-600 text-[18px] mb-4 font-semibold font-['Saira'] leading-[35px]">Rs.499</div>
+            <img src="Asserts/store.png" class="mb-8 h-[20px] w-[20px]">
+          </div>
+        </div>
+
+        <!-- Course 3 -->
+        <div class="bg-white shadow rounded-lg">
+          <img src="Asserts/Mask group (2).png" alt="Course" class="mb-4 rounded">
+          <div class="flex justify-center gap-[180px]">
+            <div class="text-slate-600 text-sm font-medium font-['Saira'] leading-[35px]">2,957 Students</div>
+            <div class="text-slate-600 text-sm font-medium font-['Saira'] leading-[35px]">02h 49m</div>
+          </div>
+          <h3 class="text-slate-700 text-left px-10 py-4 text-xl font-semibold font-['Saira']">
+            Education Software and PHP and JS System Script
+          </h3>
+          <div class="flex justify-center gap-[250px]">
+            <div class="text-slate-600 text-[18px] mb-4 font-semibold font-['Saira'] leading-[35px]">Rs.499</div>
+            <img src="Asserts/store.png" class="mb-8 h-[20px] w-[20px]">
+          </div>
+        </div>
+
+        <!-- Course 4 -->
+        <div class="bg-white shadow rounded-lg">
+          <img src="Asserts/Mask group (3).png" alt="Course" class="mb-4 rounded">
+          <div class="flex justify-center gap-[180px]">
+            <div class="text-slate-600 text-sm font-medium font-['Saira'] leading-[35px]">5,457 Students</div>
+            <div class="text-slate-600 text-sm font-medium font-['Saira'] leading-[35px]">01h 49m</div>
+          </div>
+          <h3 class="text-slate-700 text-left px-10 py-4 text-xl font-semibold font-['Saira']">
+            The Complete Financial Analyst Training & Investing
+          </h3>
+          <div class="flex justify-center gap-[250px]">
+            <div class="text-slate-600 text-[18px] mb-4 font-semibold font-['Saira'] leading-[35px]">Rs.499</div>
+            <img src="Asserts/store.png" class="mb-8 h-[20px] w-[20px]">
+          </div>
+        </div>
+
+        <!-- Course 5 -->
+        <div class="bg-white shadow rounded-lg">
+          <img src="Asserts/Mask group (4).png" alt="Course" class="mb-4 rounded">
+          <div class="flex justify-center gap-[180px]">
+            <div class="text-slate-600 text-sm font-medium font-['Saira'] leading-[35px]">595 Students</div>
+            <div class="text-slate-600 text-sm font-medium font-['Saira'] leading-[35px]">01h 49m</div>
+          </div>
+          <h3 class="text-slate-700 text-left px-10 py-4 text-xl font-semibold font-['Saira']">
+            Marketing 2023: Complete Guide To Instagram Growth
+          </h3>
+          <div class="flex justify-center gap-[250px]">
+            <div class="text-slate-600 text-[18px] mb-4 font-semibold font-['Saira'] leading-[35px]">Rs.499</div>
+            <img src="Asserts/store.png" class="mb-8 h-[20px] w-[20px]">
+          </div>
+        </div>
+
+        <!-- Course 6 -->
+        <div class="bg-white shadow rounded-lg">
+          <img src="Asserts/Mask group (5).png" alt="Course" class="mb-4 rounded">
+          <div class="flex justify-center gap-[180px]">
+            <div class="text-slate-600 text-sm font-medium font-['Saira'] leading-[35px]">458 Students</div>
+            <div class="text-slate-600 text-sm font-medium font-['Saira'] leading-[35px]">03h 00m</div>
+          </div>
+          <h3 class="text-slate-700 text-left px-10 py-4 text-xl font-semibold font-['Saira']">
+            Learn 3D Modelling and Design for Beginners
+          </h3>
+          <div class="flex justify-center gap-[250px]">
+            <div class="text-slate-600 text-[18px] mb-4 font-semibold font-['Saira'] leading-[35px]">Rs.499</div>
+            <img src="Asserts/store.png" class="mb-8 h-[20px] w-[20px]">
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <button
+        class="w-[190px] h-[50px] bg-gradient-to-r from-blue-900 to-violet-500 rounded-[10px] text-white font-['Righteous'] px-4 py-2 mt-6">
+        Explore All Courses
+      </button>
+    </div>
+  </section>
+
+
+
+  <!-- Why Learn With Our Courses -->
+  <section class="py-16 bg-gradient-to-r from-blue-400 to-violet-800">
+    <div class="container mx-auto text-center px-4">
+      <h2>
+        <span class="text-white text-[40px] font-normal font-['Righteous'] leading-[50px]">Why </span>
+        <span class="text-blue-700 text-[40px] font-normal font-['Righteous'] leading-[50px]">learn</span>
+        <span class="text-white text-[40px] font-normal font-['Righteous'] leading-[50px]"> with our courses?</span>
+      </h2>
+      <p class="text-white text-[17px] font-normal font-['Saira'] leading-[35px]">
+        We are providing the best courses and top classes. And<br>extraordinary placement training.....
+      </p>
+      <br>
+
+      <div class="py-[50px] px-4 md:px-[200px] grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+        <!-- Learn -->
+        <div class="flex flex-col items-center text-center">
+          <img src="Asserts/Icon.png" alt="" class="w-16 h-16">
+          <h3 class="text-white text-[20px] font-normal font-['Righteous'] mt-4">01. Learn</h3>
+          <p class="text-white text-[15px] font-normal font-['Righteous'] leading-[27px] mt-2">
+            Learn continually. There is always<br>“one more thing” to learn.
+          </p>
+        </div>
+
+        <!-- Graduate -->
+        <div class="flex flex-col items-center text-center">
+          <img src="Asserts/Icon (1).png" alt="" class="w-16 h-16">
+          <h3 class="text-white text-[20px] font-normal font-['Righteous'] mt-4">02. Graduate</h3>
+          <p class="text-white text-[15px] font-normal font-['Righteous'] leading-[27px] mt-2">
+            Be bold, be courageous,<br>be your best.
+          </p>
+        </div>
+
+        <!-- Work -->
+        <div class="flex flex-col items-center text-center">
+          <img src="Asserts/Icon (2).png" alt="" class="w-16 h-16">
+          <h3 class="text-white text-[20px] font-normal font-['Righteous'] mt-4">03. Work</h3>
+          <p class="text-white text-[15px] font-normal font-['Righteous'] leading-[27px] mt-2">
+            Great companies are built in<br>the office, with hard work put in by the team.
+          </p>
+        </div>
+      </div>
+      <br><br><br><br>
+    </div>
+
+    <!-- Decorative Elements -->
+    <div
+      class="absolute w-[250px] h-[220px] opacity-30 rounded-tr-[500px] rounded-br-[500px] border-2 border-white mt-[-500px] ml-[-90px]">
+    </div>
+    <div
+      class="absolute w-[225px] h-[185px] opacity-30 rounded-tr-[500px] rounded-br-[500px] border-4 border-dotted border-white mt-[-480px] ml-[-90px]">
+    </div>
+    <div
+      class="absolute w-[200px] h-[150px] opacity-30 rounded-tr-[500px] rounded-br-[500px] border-2 border-white mt-[-462px] ml-[-90px]">
+    </div>
+    <div class="w-[300px] h-[300px] bg-blue-500 rounded-full mt-[-430px] ml-[-120px] blur-[300px]"></div>
+  </section>
+
+
+  <!-- Categories Section -->
+  <section class="py-20 px-[100px] h-auto bg-gradient-to-t from-blue-100 to-white-100">
+    <div class="container mx-auto text-center">
+      <h2 class="tw-[341px] h-[50px] text-center">
+        <span class="text-zinc-800 text-[45px]   font-normal font-['Righteous'] leading-[30px]">Top </span>
+        <span class="text-blue-700 text-[45px]   font-normal font-['Righteous'] leading-[30px]">Categories</span>
+      </h2>
+      <p class="text-center text-slate-600 text-[20px] font-normal font-['Righteous'] leading-[27px]">
+        100+ unique online course list designs
+      </p>
+      <br /><br /><br />
+
+      <!-- Responsive Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div class="p-10 w-full bg-white shadow rounded-lg flex flex-col items-center">
+          <img src="Asserts/top1.png" alt="" class="px-4 py-1" />
+          <br />
+          <h2 class="text-center text-slate-700 text-[20px] font-normal font-['Righteous'] leading-[35px]">
+            Digital<br />Marketing
+          </h2>
+          <br />
+          <p class="text-center text-slate-600 text-[15px] font-normal font-['Righteous'] leading-[23px]">
+            25 Courses
+          </p>
+        </div>
+
+        <div class="p-10 w-full bg-white shadow rounded-lg flex flex-col items-center">
+          <img src="Asserts/top2.png" alt="" class="px-4 py-1" />
+          <br />
+          <h2 class="text-center text-slate-700 text-[20px] font-normal font-['Righteous'] leading-[35px]">
+            Web<br />Development
+          </h2>
+          <br />
+          <p class="text-center text-slate-600 text-[15px] font-normal font-['Righteous'] leading-[23px]">
+            16 Courses
+          </p>
+        </div>
+
+        <div class="p-10 w-full bg-white shadow rounded-lg flex flex-col items-center">
+          <img src="Asserts/top3.png" alt="" class="px-4 py-1" />
+          <br />
+          <h2 class="text-center text-slate-700 text-[20px] font-normal font-['Righteous'] leading-[35px]">
+            Art &<br />Humanities
+          </h2>
+          <br />
+          <p class="text-center text-slate-600 text-[15px] font-normal font-['Righteous'] leading-[23px]">
+            76 Courses
+          </p>
+        </div>
+
+        <div class="p-10 w-full bg-white shadow rounded-lg flex flex-col items-center">
+          <img src="Asserts/top4.png" alt="" class="px-4 py-1" />
+          <br />
+          <h2 class="text-center text-slate-700 text-[20px] font-normal font-['Righteous'] leading-[35px]">
+            Personal<br />Development
+          </h2>
+          <br />
+          <p class="text-center text-slate-600 text-[15px] font-normal font-['Righteous'] leading-[23px]">
+            22 Courses
+          </p>
+        </div>
+
+        <div class="p-10 w-full bg-white shadow rounded-lg flex flex-col items-center">
+          <img src="Asserts/top5.png" alt="" class="px-4 py-1" />
+          <br />
+          <h2 class="text-center text-slate-700 text-[20px] font-normal font-['Righteous'] leading-[35px]">
+            IT and<br />Software
+          </h2>
+          <br />
+          <p class="text-center text-slate-600 text-[15px] font-normal font-['Righteous'] leading-[23px]">
+            110 Courses
+          </p>
+        </div>
+
+        <div class="p-10 w-full bg-white shadow rounded-lg flex flex-col items-center">
+          <img src="Asserts/top6.png" alt="" class="px-4 py-1" />
+          <br />
+          <h2 class="text-center text-slate-700 text-[20px] font-normal font-['Righteous'] leading-[35px]">
+            Graphic<br />Design
+          </h2>
+          <br />
+          <p class="text-center text-slate-600 text-[15px] font-normal font-['Righteous'] leading-[23px]">
+            85 Courses
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Subscribe Section -->
+  <section class="py-[100px] px-[250px] bg-white text-white h-[900px] hidden sm:hidden md:hidden lg:block">
+    <div data-layer="Subscribe" class="Subscribe w-[1260px] h-[420px] relative">
+      <div data-layer="Bg"
+        class="Bg w-[1000px] h-[370px] left-0 top-0 absolute bg-gradient-to-l from-fuchsia-500 via-indigo-700 to-sky-500 rounded-[20px]">
+      </div>
+      <div data-layer="subscribe" class="Subscribe w-[409px] h-[50px] left-[284px] top-[260px] absolute">
+        <div data-layer="button" class="Button w-[142px] h-[60px] left-[300px] top-0 absolute">
+          <div data-layer="bg"
+            class="Bg w-[142px] h-[60px] left-0 top-0 absolute bg-blue-700 rounded-tr-[10px] rounded-br-[10px]"></div>
+          <div data-layer="Subscribe"
+            class="Subscribe left-[36px] top-[21px] absolute text-right text-white text-base font-normal font-['Righteous']">
+            Subscribe</div>
+        </div>
+        <div data-layer="button" class="Button w-[367px] h-[60px] left-0 top-0 absolute">
+          <div data-layer="bg"
+            class="Bg w-[300px] h-[60px] left-0 top-0 absolute bg-white/20 rounded-tl-[10px] rounded-bl-[10px]"></div>
+          <div data-layer="enter your email"
+            class="EnterYourEmail left-[20px] top-[15px] absolute text-white text-base font-normal font-['Righteous'] leading-[30px]">
+            enter your email</div>
+        </div>
+      </div>
+      <div data-layer="20k+ students daily learn with Eduvi. Subscribe for new courses."
+        class="KStudentsDailyLearnWithEduviSubscribeForNewCourses left-[309px] top-[210px] absolute text-center text-white/70 text-[13px] font-normal font-['Righteous'] leading-[30px]">
+        20k+ students daily learn with Eduvi. Subscribe for new courses.</div>
+      <div data-layer="Subscribe For Get Update Every New Courses"
+        class="SubscribeForGetUpdateEveryNewCourses left-[320px] top-[80px] absolute text-center text-white text-[30px] font-normal font-['Righteous'] leading-[55px]">
+        Subscribe For Get Update<br />Every New Courses</div>
+      <div data-layer="images" class="Images w-[1180px] h-[294px] left-[50px] top-[61px] absolute">
+        <img data-layer="Ellipse 166" class="Ellipse166 w-[60px] h-[60px] left-[30px] top-[200px] absolute "
+          src="Asserts/p3.png" />
+        <img data-layer="Ellipse 168" class="Ellipse168 w-[60px] h-[60px] left-[1px] top-[1px] absolute "
+          src="Asserts/p1.png" />
+        <img data-layer="Ellipse 167" class="Ellipse167 w-[60px] h-[60px] left-[100px] top-[90px] absolute "
+          src="Asserts/p2.png" />
+        <img data-layer="Ellipse 167" class="Ellipse167 w-[60px] h-[60px] left-[750px] top-[80px] absolute "
+          src="Asserts/p5.png" />
+        <img data-layer="Ellipse 168" class="Ellipse168 w-[60px] h-[60px] left-[845px] top-[200px] absolute "
+          src="Asserts/p6.png" />
+        <img data-layer="Ellipse 166" class="Ellipse166 w-[60px] h-[60px] left-[820px] top-[-20px] absolute "
+          src="Asserts/p4.png" />
+      </div>
+    </div>
+  </section>
+
+  <!--Youtube video-->
+  <img src="Asserts/Polygon 8.png" alt=""
+    class="absolute w-[80px] ml-[200px] mt-[-470px] hidden sm:hidden md:hidden lg:block">
+  <img src="Asserts/Polygon 8.png" alt=""
+    class="absolute w-[80px] ml-[660px] mt-[-780px] opacity-50 hidden sm:hidden md:hidden lg:block">
+  <img src="Asserts/Polygon 7.png" alt=""
+    class="absolute w-[80px] ml-[1268px] mt-[-380px] hidden sm:hidden md:hidden lg:block">
+  <img src="Asserts/youtub.png" alt=""
+    class="absolute w-[820px] ml-[350px] mt-[-260px] hidden sm:hidden md:hidden lg:block">
+  <img src="Asserts/play.png" alt=""
+    class="absolute w-[150px] ml-[700px] mt-[-110px] hidden sm:hidden md:hidden lg:block">
+  <img src="Asserts/banner_right.png.png" alt=""
+    class="absolute w-[210px] ml-[1045px] mt-[70px] hidden sm:hidden md:hidden lg:block">
+
+  <!-- Testimonials -->
+  <section
+    class="bg-gradient-to-t from-blue-100 to-white-100 pt-[320px] h-auto w-auto md:w-auto pb-[30px] hidden sm:hidden md:block lg:block">
+    <img src="Asserts/Ellipse 1.5.png" alt="" class="absolute w-[90px] ml-[100px] mt-[30px]">
+    <div class="container mx-auto text-center">
+      <br>
+      <h2 class="text-center text-blue-700 text-[40px] font-normal font-['Righteous'] leading-[55px]">Testimonials</h2>
+      <p class="text-center text-slate-600 text-[18px] font-normal font-['Righteous'] leading-[50px]">What our students
+        say about us</p><br><br>
+
+      <!-- Responsive Grid -->
+      <div class="flex flex-col sm:flex-row flex-wrap">
+        <div class="bg-white shadow-lg w-[450px] h-[155px] px-[40px] mt-[40px] ml-[135px]">
+          <img src="Asserts/testperson.png" alt="" class="absolute w-[50px] mt-[-30px] ml-[150px]"><br><br>
+          <p class="text-[13px] w-[400px] text-left font-normal font-['Righteous'] ">Such an amazing traniner and easily
+            understand the entire <br />syllabus, and the guidence will be super and good to the way<br>of explaning.
+          </p>
+          <img src="Asserts/star.png" alt="" class="ml-[10px] py-[10px] w-[100px]">
+        </div>
+
+        <div
+          class="bg-white hidden sm:hidden md:hidden lg:block absolute shadow-lg w-[450px] h-[155px] px-[40px] mt-[10px] ml-[550px]">
+          <img src="Asserts/testperson.png" alt="" class="absolute w-[50px] mt-[-30px] ml-[150px]"><br><br>
+          <p class="text-[13px] w-[400px] text-left font-normal font-['Righteous'] ">Such an amazing traniner and easily
+            understand the entire <br />syllabus, and the guidence will be super and good to the way<br>of explaning.
+          </p>
+          <img src="Asserts/star.png" alt="" class="ml-[10px] py-[10px] w-[100px]">
+        </div>
+
+        <div class="bg-white  shadow-lg w-[450px] h-[155px] px-[40px] mt-[40px] lg:ml-[380px] md:ml-[140px]">
+          <img src="Asserts/testperson.png" alt="" class="absolute w-[50px] mt-[-30px] ml-[150px]"><br><br>
+          <p class="text-[13px] w-[400px] text-left font-normal font-['Righteous'] ">Such an amazing traniner and easily
+            understand the entire <br />syllabus, and the guidence will be super and good to the way<br>of explaning.
+          </p>
+          <img src="Asserts/star.png" alt="" class="ml-[10px] py-[10px] w-[100px]">
+        </div>
+      </div>
+    </div>
+    <div class="flex absolute ml-[1425px] mt-[130px]">
+      <img src="Asserts/Back Arrow.png" alt="" class="w-[33px] h-[30px]">
+      <img src="Asserts/Front Arrow.png" alt="" class="w-[33px] h-[30px]">
+    </div>
+    <div class="w-[500px] h-[500px] opacity-25 bg-violet-500/50 rounded-full mt-[-340px] ml-[-170px] blur-[430px]">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-l from-[#477AE3] to-[#931BBD] py-6 lg:h-[428px] md:h-auto sm:h-auto">
+    <div class=" lg:h-[230px] md:h-auto sm:h-auto relative px-16 py-10">
+      <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-10">
+
+        <div class="flex-col  w-[350px]">
+          <h3 class="text-slate-900 text-[25px] ml-[30px] font-normal font-['Righteous']">Connect</h3>
+          <img src="Asserts/Askmeidentity 2.png" alt="" class="mix-blend-color-burn mr-[-10px] mt-[10px]">
+          <p class="opacity-50 text-black text-[15px] font-normal font-['Righteous']">Sri Jagannath
+            Nivas,8-1-164/345/A/1,<br />Pragati Colony, Mailardevpally, Nawab<br />Saheb Kunta, Hyd, 500005</p>
+        </div>
+
+        <div class="flex-col leading-10 w-[270px]">
+          <h3 class="text-slate-900 text-[25px] font-normal font-['Righteous']">Classes</h3>
+          <p class="text-black text-[18px] font-normal font-['Righteous']">Classroom courses</p>
+          <p class="text-black text-[18px] font-normal font-['Righteous']">Virtual classroom courses</p>
+          <p class="text-black text-[18px] font-normal font-['Righteous']">E-learning Courses</p>
+          <p class="text-black text-[18px] font-normal font-['Righteous']">video courses</p>
+          <p class="text-black text-[18px] font-normal font-['Righteous']">Offline courses</p>
+        </div>
+
+        <div class="flex-col w-[200px] leading-10">
+          <h3 class="text-slate-900 text-[25px] font-normal font-['Righteous']">Community</h3>
+          <p class="text-black text-[18px] font-normal font-['Righteous']">Learners</p>
+          <p class="text-black text-[18px] font-normal font-['Righteous']">Parteners</p>
+          <p class="text-black text-[18px] font-normal font-['Righteous']">Developers</p>
+          <p class="text-black text-[18px] font-normal font-['Righteous']">Transactions</p>
+          <p class="text-black text-[18px] font-normal font-['Righteous']">Blog</p>
+        </div>
+
+        <div class="flex-col w-[260px] leading-10">
+          <h3 class="text-slate-900 text-[25px] font-normal font-['Righteous']">Quick links</h3>
+          <p class="text-black text-[18px] font-normal font-['Righteous']">Home</p>
+          <p class="text-black text-[18px] font-normal font-['Righteous']">Professional Education</p>
+          <p class="text-black text-[18px] font-normal font-['Righteous']">Courses</p>
+          <p class="text-black text-[18px] font-normal font-['Righteous']">Admissions</p>
+          <p class="text-black text-[18px] font-normal font-['Righteous']">Testimonial</p>
+          <p class="text-black text-[18px] font-normal font-['Righteous']">Programs</p>
+        </div>
+
+        <div class="flex-col leading-[45px] w-[150px] mt-[-10px]">
+          <h3 class="text-slate-900 text-[25px] font-normal font-['Righteous']">More</h3>
+          <p class="text-black text-[18px] font-normal font-['Righteous']">Press</p>
+          <p class="text-black text-[18px] font-normal font-['Righteous']">Investors</p>
+          <p class="text-black text-[18px] font-normal font-['Righteous']">Terms</p>
+          <p class="text-black text-[18px] font-normal font-['Righteous']">Privacy</p>
+          <p class="text-black text-[18px] font-normal font-['Righteous']">Help</p>
+          <p class="text-black text-[18px] font-normal font-['Righteous']">Contact</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="h-[80px] flex justify-center gap-8 py-[10px] mt-[173px] bg-gradient-to-b from-[#0351AE] to-[#A542C8]">
+      <div class="w-[40px] p-[5px] h-[40px] bg-white rounded-full border border-blue-700">
+        <img src="Asserts/Instagram.png" alt="" class="w-[55px]">
+      </div>
+      <div class="w-[40px] p-[5px] h-[40px] bg-white rounded-full border border-blue-700">
+        <img src="Asserts/WhatsApp.png" alt="" class="w-[55px]">
+      </div>
+      <div class="w-[40px] p-[9px] h-[40px] bg-white rounded-full border border-blue-700">
+        <img src="Asserts/Twitter.png" alt="" class="w-[35px]">
+      </div>
+      <div class="w-[40px] p-[6px] h-[40px] bg-white rounded-full border border-blue-700">
+        <img src="Asserts/LinkedIn.png" alt="" class="w-[55px]">
+      </div>
+      <div class="w-[40px] p-[5px] h-[40px] bg-white rounded-full border border-blue-700">
+        <img src="Asserts/YouTube.png" alt="" class="w-[40px]">
+      </div>
+    </div>
+    <div class="h-[18px] mt-[-20px] w-full absolute  opacity-20 bg-blue-700 hidden sm:hidden md:hidden lg:block"></div>
+    <span
+      class="absolute text-white text-[12px] ml-[620px] mt-[-20px] font-normal font-['Righteous'] hidden sm:hidden md:hidden lg:block">Copyright
+      @ 2023 askmeidentity. All Rights Reserved</span>
+  </footer>
+
+</body>
+
+</html>

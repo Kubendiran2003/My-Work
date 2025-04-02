@@ -1,0 +1,15 @@
+/* src/components/HelloWorld.css */
+
+.hello-world {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .hello-world h1 {
+    color: #61dafb;
+  }
+  
+  .hello-world p {
+    color: #282c34;
+  }
+  

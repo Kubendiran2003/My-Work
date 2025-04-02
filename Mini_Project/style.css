@@ -1,0 +1,163 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background: url(https://media.giphy.com/media/3o6Zt0GuOcqfPg8Cyc/giphy.gif?cid=ecf05e47g85vnbnulf35xcgnme8ramicw01h09ep7fppfv3w&ep=v1_gifs_search&rid=giphy.gif&ct=g) no-repeat center center fixed;
+    background-size: cover;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Header */
+h1 {
+    display: flex;
+    display: inline-block;
+    font-size: 2.2rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+h1 span {
+    display: inline-block;
+    animation: bounce 0.6s ease infinite;
+}
+
+h1 span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+h1 span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+h1 span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+h1 span:nth-child(5) {
+    animation-delay: 0.4s;
+}
+h1 span:nth-child(6) {
+    animation-delay: 0.5s;
+}
+h1 span:nth-child(7) {
+    animation-delay: 0.6s;
+}
+h1 span:nth-child(8) {
+    animation-delay: 0.7s;
+}
+h1 span:nth-child(9) {
+    animation-delay: 0.8s;
+}
+h1 span:nth-child(10) {
+    animation-delay: 0.9s;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Restart Button */
+#restart {
+    background: darkblue;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+}
+
+#restart:hover {
+    
+    box-shadow: 
+        0px 0px 10px #33ff57,
+        0px 0px 40px #33ff57,
+        0px 0px 60px #33ff57;
+}
+
+/* Move Counter & Timer */
+#moves, #timer {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    margin: 10px 0;
+}
+
+/* Game Board - Fixed 4x4 Layout */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Always 4 columns */
+    grid-gap: 12px;
+    justify-content: center;
+    margin-top: 20px;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Correct Card Effect (Green color) */
+.card.correct {
+    background: green; /* Light Green */
+    transform: rotateY(180deg);
+}
+
+/* Default Card Size */
+.card {
+    width: 100px;
+    height: 100px;
+    background: darkgray;
+    border-radius: 12px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff758c;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Smaller Cards for Tablets */
+@media (max-width: 768px) {
+    .card {
+        width: 80px;
+        height: 80px;
+        font-size: 1.5rem;
+    }
+}
+
+/* Even Smaller Cards for Mobile */
+@media (max-width: 480px) {
+    .card {
+        width: 60px;
+        height: 60px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Flipped Card Effect */
+.card.flipped {
+    background: white;
+    transform: rotateY(180deg);
+}
+
+/* Status Message */
+#status {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+}
