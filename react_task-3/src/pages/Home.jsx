@@ -96,26 +96,25 @@ const Home = () => {
         <div className="flex flex-col justify-between md:flex-row sm:items-center gap-2 w-full md:w-auto">
           <SearchBar onSearch={handleSearch} initialQuery={query} />
           <div className="flex flex-row sm:flex-row sm:items-center gap-2 w-full justify-between md:w-auto">
-          <select
-            onChange={handleTypeChange}
-            value={type}
-            className="p-2 border text-xs lg:text-base font-semibold rounded sm:w-auto"
-          >
-            <option value="">All</option>
-            <option value="movie">Movies</option>
-            <option value="series">Series</option>
-            <option value="episode">Episodes</option>
-          </select>
-          <button
-            onClick={handleFavoritesClick} // Navigate to Favorites page
-            className="py-2 px-4 bg-red-500 text-xs lg:text-base text-white rounded shadow font-semibold hover:bg-red-600 transition-all duration-300"
-          >
-            Favorites ({favorites.length})
-          </button>
+            <select
+              onChange={handleTypeChange}
+              value={type}
+              className="p-2 border text-xs lg:text-base font-semibold rounded sm:w-auto"
+            >
+              <option value="">All</option>
+              <option value="movie">Movies</option>
+              <option value="series">Series</option>
+              <option value="episode">Episodes</option>
+            </select>
+            <button
+              onClick={handleFavoritesClick} // Navigate to Favorites page
+              className="py-2 px-4 bg-red-500 text-xs lg:text-base text-white rounded shadow font-semibold hover:bg-red-600 transition-all duration-300"
+            >
+              Favorites ({favorites.length})
+            </button>
           </div>
-      </div>
         </div>
-        
+      </div>
 
       {/* 🎥 Video as GIF-like banner */}
       <div className="mt-4 mb-6">
