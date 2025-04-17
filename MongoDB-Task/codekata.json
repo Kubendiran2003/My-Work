@@ -1,0 +1,20 @@
+[{
+  "_id": 1,
+  "user_id": 101,
+  "problems_solved": 45
+},
+{
+  "_id": 2,
+  "user_id": 102,
+  "problems_solved": 30
+},
+{
+  "_id": 3,
+  "user_id": 103,
+  "problems_solved": 65
+},
+{
+  "_id": 4,
+  "user_id": 104,
+  "problems_solved": 20
+}]

@@ -1,0 +1,28 @@
+[{
+  "_id": 1,
+  "user_id": 101,
+  "task_name": "JS Task",
+  "submitted": true,
+  "date": "2020-10-10"
+},
+{
+  "_id": 2,
+  "user_id": 102,
+  "task_name": "Node Task",
+  "submitted": false,
+  "date": "2020-10-20"
+},
+{
+  "_id": 3,
+  "user_id": 103,
+  "task_name": "Mongo Task",
+  "submitted": false,
+  "date": "2020-10-22"
+},
+{
+  "_id": 4,
+  "user_id": 104,
+  "task_name": "React Task",
+  "submitted": true,
+  "date": "2020-11-01"
+}]

@@ -1,0 +1,24 @@
+[{
+  "_id": 1,
+  "user_id": 101,
+  "date": "2020-10-16",
+  "present": false
+},
+{
+  "_id": 2,
+  "user_id": 102,
+  "date": "2020-10-20",
+  "present": true
+},
+{
+  "_id": 3,
+  "user_id": 103,
+  "date": "2020-10-22",
+  "present": false
+},
+{
+  "_id": 4,
+  "user_id": 104,
+  "date": "2020-10-25",
+  "present": true
+}]

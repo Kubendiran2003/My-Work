@@ -1,0 +1,15 @@
+[{
+  "_id": 1,
+  "topic": "JavaScript Basics",
+  "date": "2020-10-10"
+},
+{
+  "_id": 2,
+  "topic": "Node.js",
+  "date": "2020-10-20"
+},
+{
+  "_id": 3,
+  "topic": "MongoDB",
+  "date": "2020-11-01"
+}]
