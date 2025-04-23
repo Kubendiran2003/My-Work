@@ -112,6 +112,7 @@ A simple authentication and authorization app using Node.js, Express, MongoDB, a
 ```json
 Authorization: Bearer <jwt_token>
 ```
+### The token is auto fetch and directly going to users page
 
 #### Sample Response:
 ```json
