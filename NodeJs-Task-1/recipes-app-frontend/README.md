@@ -52,7 +52,7 @@ Follow these steps to set up the project locally:
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Kubendiran2003/My-Work/tree/957f36607af60b978994e26aa35ac258034502b8/NodeJs-Task-1/recipes-app-frontend
    cd recipes-app-frontend
    ```
 
