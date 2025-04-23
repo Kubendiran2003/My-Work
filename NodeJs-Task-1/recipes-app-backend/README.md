@@ -54,16 +54,19 @@ recipes-app-backend/
 Follow these steps to set up the backend locally:
 
 1. Navigate to the backend directory:
+
    ```bash
    cd recipes-app-backend
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Create a `.env` file and add the following:
+
    ```env
    PORT=5000
    MONGODB_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/recipeApp
@@ -85,13 +88,13 @@ Follow these steps to set up the backend locally:
 
 ## API Endpoints
 
-| Method | Endpoint             | Description              |
-|--------|----------------------|--------------------------|
-| POST   | /api/recipes         | Create a new recipe      |
-| GET    | /api/recipes         | Get all recipes          |
-| GET    | /api/recipes/:id     | Get recipe by ID         |
-| PUT    | /api/recipes/:id     | Update recipe by ID      |
-| DELETE | /api/recipes/:id     | Delete recipe by ID      |
+| Method | Endpoint         | Description         |
+| ------ | ---------------- | ------------------- |
+| POST   | /api/recipes     | Create a new recipe |
+| GET    | /api/recipes     | Get all recipes     |
+| GET    | /api/recipes/:id | Get recipe by ID    |
+| PUT    | /api/recipes/:id | Update recipe by ID |
+| DELETE | /api/recipes/:id | Delete recipe by ID |
 
 All endpoints return JSON responses.
 
@@ -128,4 +131,3 @@ Make sure to set your environment variables correctly on the chosen platform.
 - **Mongoose**: ODM for MongoDB
 - **Dotenv**: Load environment variables
 - **Nodemon**: Auto-restart server during development
-
