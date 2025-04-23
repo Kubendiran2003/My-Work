@@ -39,7 +39,7 @@ A simple authentication and authorization app using Node.js, Express, MongoDB, a
 
 1. Clone the repository:
    ```bash
-   git clone <My-repo-url>
+   git clone https://github.com/Kubendiran2003/My-Work/tree/main/NodeJs-Task-2
    cd <your-folder-name>
    ```
 

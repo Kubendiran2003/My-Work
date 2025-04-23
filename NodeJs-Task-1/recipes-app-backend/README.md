@@ -119,7 +119,7 @@ You can deploy this backend on platforms like:
 - **Railway**: Infrastructure automation platform
 - **Vercel** (for serverless functions)
 
-Make sure to set your environment variables correctly on the chosen platform.
+Make sure to set your environment variables correctly on the chosen platforms.
 
 ---
 
