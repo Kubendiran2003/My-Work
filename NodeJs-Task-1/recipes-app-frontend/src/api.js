@@ -1,5 +1,8 @@
 import axios from 'axios';
-const API = axios.create({ baseURL: 'http://localhost:5000/api/recipes' });
+
+const API = axios.create({
+  baseURL: 'https://my-work-2n65.onrender.com/api/recipes',
+});
 
 export const getRecipes = () => API.get('/');
 export const getRecipeById = (id) => API.get(`/${id}`);
