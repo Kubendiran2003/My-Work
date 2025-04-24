@@ -2,6 +2,10 @@
 
 A simple authentication and authorization app using Node.js, Express, MongoDB, and JWT. Follows the MVC pattern.
 
+## Detailed documentation for each API endpoint in Postman
+
+[View API Documentation](https://documenter.getpostman.com/view/44150102/2sB2izCYSB)
+
 ## Features
 
 - User Registration
