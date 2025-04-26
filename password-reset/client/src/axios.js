@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:4000/api/auth',
-  withCredentials: true, // Important for cookies (like JWT)
+  baseURL: 'https://password-reset-6woc.onrender.com/api/auth',
+  withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
   },

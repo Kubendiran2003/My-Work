@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../axios';
 
 const Dashboard = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:4000/api/auth/me', { withCredentials: true })
+    api.get('/me')
       .then((res) => setUser(res.data))
       .catch((err) => console.error(err));
   }, []);
