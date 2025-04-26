@@ -11,12 +11,18 @@ const app = express();
 
 // Middleware
 app.use(express.json());
+
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:5173'],
+  origin: [
+    'http://localhost:3000',
+    'http://localhost:5173',
+    'https://password-reset-flow12.netlify.app/'
+  ],
   credentials: true,
 }));
 
 app.use(cookieParser());
+
 
 // Connect to MongoDB
 connectDB();
