@@ -16,7 +16,7 @@ app.use(cors({
   origin: [
     'http://localhost:3000',
     'http://localhost:5173',
-    'https://password-reset-flow12.netlify.app/'
+    'https://password-reset-flow12.netlify.app'
   ],
   credentials: true,
 }));
