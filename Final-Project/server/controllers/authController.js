@@ -1,20 +1,25 @@
+// server/controllers/authController.js
 const User = require('../models/User');
+const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const crypto = require('crypto');
 const sendEmail = require('../utils/sendEmail');
 
-exports.signup = async (req, res) => {
-  const { email, password } = req.body;
-  try {
-    const userExists = await User.findOne({ email });
-    if (userExists) return res.status(400).json({ message: 'User already exists' });
+const generateToken = (user) => {
+  return jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
+};
 
-    const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = new User({ email, password: hashedPassword });
-    await newUser.save();
-    res.status(201).json({ message: 'User created successfully' });
+exports.register = async (req, res) => {
+  const { username, email, password } = req.body;
+  try {
+    const existingUser = await User.findOne({ email });
+    if (existingUser) return res.status(400).json({ msg: 'User already exists' });
+
+    const user = new User({ username, email, password });
+    await user.save();
+    res.status(201).json({ msg: 'User registered successfully' });
   } catch (error) {
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ error: error.message });
   }
 };
 
@@ -22,14 +27,23 @@ exports.login = async (req, res) => {
   const { email, password } = req.body;
   try {
     const user = await User.findOne({ email });
-    if (!user) return res.status(404).json({ message: 'User not found' });
+    if (!user) return res.status(400).json({ msg: 'Invalid credentials' });
 
     const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) return res.status(400).json({ message: 'Invalid credentials' });
+    console.log('Compare result:', isMatch); // Debug
+    if (!isMatch) return res.status(400).json({ msg: 'Invalid credentials' });
 
-    res.status(200).json({ message: 'Login successful', user });
+    const token = generateToken(user);
+
+    res.cookie('token', token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      maxAge: 24 * 60 * 60 * 1000,
+    });
+
+    res.status(200).json({ msg: 'Login successful' });
   } catch (error) {
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ error: error.message });
   }
 };
 
@@ -41,7 +55,7 @@ exports.forgotPassword = async (req, res) => {
 
     const token = crypto.randomBytes(32).toString('hex');
     user.resetToken = token;
-    user.resetTokenExpiry = Date.now() + 3600000; // 1 hour
+    user.resetTokenExpiry = Date.now() + 3600000;
     await user.save();
 
     const resetLink = `http://localhost:3000/reset-password/${token}`;
@@ -60,13 +74,23 @@ exports.resetPassword = async (req, res) => {
     const user = await User.findOne({ resetToken: token, resetTokenExpiry: { $gt: Date.now() } });
     if (!user) return res.status(400).json({ message: 'Invalid or expired token' });
 
-    user.password = await bcrypt.hash(password, 10);
+    user.password = password; // Will be hashed via pre-save
     user.resetToken = null;
     user.resetTokenExpiry = null;
+
     await user.save();
 
     res.status(200).json({ message: 'Password reset successful' });
   } catch (error) {
     res.status(500).json({ message: 'Server error' });
+  }
+};
+
+exports.getUserInfo = async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id).select('-password -__v');
+    res.json(user);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
 };
