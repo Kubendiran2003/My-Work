@@ -1,4 +1,5 @@
 // server/server.js
+
 require('dotenv').config();
 const express = require('express');
 const cookieParser = require('cookie-parser');
@@ -10,14 +11,22 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true,
+}));
 app.use(cookieParser());
 
-// Connect to DB
+// Connect to MongoDB
 connectDB();
 
 // Routes
 app.use('/api/auth', authRoutes);
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Get PORT from environment variables, fallback to 4000
+const PORT = process.env.PORT || 4000;
+
+// Start server
+app.listen(PORT, () => {
+  console.log(`✅ Server running on port ${PORT}`);
+});
